@@ -11,12 +11,14 @@ namespace CSharpInterfacesExplained
 {
     public class WeatherService1 : IWeatherService
     {
+        const string Key = "95b6a93e20294aa2be7210523220101";
+
         public decimal? GetCityTemperatureCelsius(string City)
         {            
             var Result = default(decimal?);
             try
             {
-                var Endpoint = $"http://api.weatherapi.com/v1/current.json?key=95b6a93e20294aa2be7210523220101&q={City}";
+                var Endpoint = $"http://api.weatherapi.com/v1/current.json?key={Key}&q={City}";
                 using (var WC = new WebClient())
                 {
                     var ResponseString = WC.DownloadString(Endpoint);
@@ -51,12 +53,14 @@ namespace CSharpInterfacesExplained
 
     public class WeatherService2 : IWeatherService
     {
+        const string AccessKey = "99fc7e405ab9a2a2c34583da9c31bd37";
+
         public decimal? GetCityTemperatureCelsius(string City)
         {
             var Result = default(decimal?);
             try
             {
-                var Endpoint = $"http://api.weatherstack.com/current?access_key=99fc7e405ab9a2a2c34583da9c31bd37&query={City}";
+                var Endpoint = $"http://api.weatherstack.com/current?access_key={AccessKey}&query={City}";
                 using (var WC = new WebClient())
                 {
                     var ResponseString = WC.DownloadString(Endpoint);

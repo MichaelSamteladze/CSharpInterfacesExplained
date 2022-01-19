@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CSharpInterfacesExplained
 {
@@ -14,19 +11,20 @@ namespace CSharpInterfacesExplained
             var WeatherService2 = new WeatherService2();
 
             var City = "Tbilisi";
-            var T1 = GetTemperature(City, WeatherService1);
-            var T2 = GetTemperature(City, WeatherService2);
+            var Result1 = GetTemperatureFormatted(City, WeatherService1);
+            var Result2 = GetTemperatureFormatted(City, WeatherService2);
 
 
             Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine($"Result from WeatherService1 - {City}: {T1}°C");            
-            Console.WriteLine($"Result from WeatherService2 - {City}: {T2}°C");
+            Console.WriteLine($"Result from WeatherService1 - {Result1}");
+            Console.WriteLine($"Result from WeatherService2 - {Result2}");
             Console.WriteLine(Environment.NewLine);
         }
 
-        static decimal? GetTemperature(string City, IWeatherService WeatherService)
+        static string GetTemperatureFormatted(string City, IWeatherService WeatherService)
         {
-            var Result = WeatherService.GetCityTemperatureCelsius(City);
+            var Temperature = WeatherService.GetCityTemperatureCelsius(City);
+            var Result = $"Today is {Temperature}°C in {City}";
             return Result;
         }
     }
