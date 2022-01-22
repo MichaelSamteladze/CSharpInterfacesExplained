@@ -7,17 +7,17 @@ namespace CSharpInterfacesExplained
     {
         static void Main(string[] args)
         {
-            var WeatherService1 = new WeatherService1();
-            var WeatherService2 = new WeatherService2();
+            var AwesomeService = new AwesomeWeatherService();
+            var WonderfulService = new WonderfulWeatherService();
 
             var City = "Tbilisi";
-            var Result1 = GetTemperatureFormatted(City, WeatherService1);
-            var Result2 = GetTemperatureFormatted(City, WeatherService2);
+            var Result1 = GetTemperatureFormatted(City, AwesomeService);
+            var Result2 = GetTemperatureFormatted(City, WonderfulService);
 
 
             Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine($"Result from WeatherService1 - {Result1}");
-            Console.WriteLine($"Result from WeatherService2 - {Result2}");
+            Console.WriteLine($"AwesomeService - {Result1}");
+            Console.WriteLine($"WonderfulService - {Result2}");
             Console.WriteLine(Environment.NewLine);
         }
 

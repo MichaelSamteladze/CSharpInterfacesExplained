@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CSharpInterfacesExplained
 {
-    public class WeatherService1 : IWeatherService
+    public class AwesomeWeatherService : IWeatherService
     {
         const string Key = "95b6a93e20294aa2be7210523220101";
 
@@ -51,7 +51,7 @@ namespace CSharpInterfacesExplained
         }
     }
 
-    public class WeatherService2 : IWeatherService
+    public class WonderfulWeatherService : IWeatherService
     {
         const string AccessKey = "99fc7e405ab9a2a2c34583da9c31bd37";
 
