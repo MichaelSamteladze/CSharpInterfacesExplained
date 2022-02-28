@@ -7,25 +7,14 @@ namespace CSharpInterfacesExplained
     {
         static void Main(string[] args)
         {
-            var AwesomeService = new AwesomeWeatherService();
-            var WonderfulService = new WonderfulWeatherService();
-
+            var WeatherServiceProvider = new AwesomeWeatherService();
+            //var WeatherServiceProvider = new WonderfulWeatherService();
             var City = "Tbilisi";
-            var Result1 = GetTemperatureFormatted(City, AwesomeService);
-            var Result2 = GetTemperatureFormatted(City, WonderfulService);
 
+            var WP = new WeatherReport(WeatherServiceProvider);
+            var Result = WP.GetCityCurrentTemperature(City);
 
-            Console.OutputEncoding = Encoding.UTF8;
-            Console.WriteLine($"AwesomeService - {Result1}");
-            Console.WriteLine($"WonderfulService - {Result2}");
-            Console.WriteLine(Environment.NewLine);
-        }
-
-        static string GetTemperatureFormatted(string City, IWeatherService WeatherService)
-        {
-            var Temperature = WeatherService.GetCityTemperatureCelsius(City);
-            var Result = $"Today is {Temperature}°C in {City}";
-            return Result;
+            Console.WriteLine(Result);
         }
     }
 }

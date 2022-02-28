@@ -76,7 +76,8 @@
     <Compile Include="IWeatherService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WeatherServices.cs" />
+    <Compile Include="WeatherReport.cs" />
+    <Compile Include="WeatherWebServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
